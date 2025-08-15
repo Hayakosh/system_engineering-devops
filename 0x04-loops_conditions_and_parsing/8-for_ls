@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
-# This script displays the part of the file names after the first dash in the current directory.
-for file in *-*/; do
-  # Extract the part after the first dash using parameter expansion
-  echo "${file#*-}"
+# This script displays part of the filenames after the first dash (-) in the current directory
+# Iterate through the files in the current directory using for loop
+for file in *; do
+  # Skip hidden files (those starting with a dot)
+  if [[ "$file" != .* ]]; then
+    # Only display the part of the name after the first dash (-)
+    # Using parameter expansion to remove the portion before the first dash
+    echo "${file#*-}"
+  fi
 done
