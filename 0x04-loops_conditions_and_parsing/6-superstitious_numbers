@@ -1,0 +1,153 @@
+#!/usr/bin/env bash
+# This script displays numbers from 1 to 20, with special messages for certain numbers.
+
+count=1
+while [ $count -le 20 ]; do
+  case $count in
+    4)
+      echo "4"
+      echo "bad luck from China"
+      ;;
+    9)
+      echo "9"
+      echo "bad luck from Japan"
+      ;;
+    17)
+      echo "17"
+      echo "bad luck from Italy"
+      ;;
+    *)
+      echo $count
+      ;;
+  esac
+  ((count++))
+done
+Explanation:
+
+The while loop runs from 1 to 20.
+
+A case statement is used to handle the special cases for 4, 9, and 17.
+
+For each of these numbers, it displays the number followed by the corresponding "bad luck" message.
+
+For all other numbers, it simply displays the number.
+
+Save the script:
+
+Press CTRL + X to exit.
+
+Press Y to confirm saving the changes.
+
+Press Enter to save.
+
+Make the script executable:
+
+bash
+Copy
+Edit
+chmod +x 6-superstitious_numbers
+Run the script:
+
+bash
+Copy
+Edit
+./6-superstitious_numbers
+Expected Output:
+
+csharp
+Copy
+Edit
+1
+2
+3
+4
+bad luck from China
+5
+6
+7
+8
+9
+bad luck from Japan
+10
+11
+12
+13
+14
+15
+16
+17
+bad luck from Italy
+18
+19
+20
+Commit and push the changes:
+
+bash
+Copy
+Edit
+git add 6-superstitious_numbers
+git commit -m "Add superstitious messages for specific numbers"
+git push origin main
+Task 7: For ls
+In this task, you need to process the files in the current directory, extracting the part of their names after the first dash (-).
+
+Steps:
+Create the script file:
+
+bash
+Copy
+Edit
+touch 7-for_ls
+Open the script in nano:
+
+bash
+Copy
+Edit
+nano 7-for_ls
+Write the script:
+
+In nano, write the following script:
+
+bash
+Copy
+Edit
+#!/usr/bin/env bash
+# This script lists files and displays only the part after the first dash (-).
+
+for file in $(ls); do
+  if [[ $file == *"-"* ]]; then
+    echo ${file#*-}
+  fi
+done
+Explanation:
+
+The for loop iterates over all the files in the current directory.
+
+The if condition checks if the filename contains a dash (-).
+
+${file#*-} removes everything before and including the first dash (-), displaying only the part after it.
+
+#!/usr/bin/env bash
+# This script displays numbers from 1 to 20, with special messages for certain numbers.
+count=1
+while [ $count -le 20 ]; do
+  case $count in
+    4)
+      echo "4"
+      echo "bad luck from China"
+      ;;
+    9)
+      echo "9"
+      echo "bad luck from Japan"
+      ;;
+    17)
+      echo "17"
+      echo "bad luck from Italy"
+      ;;
+    *)
+      echo $count
+      ;;
+  esac
+  ((count++))
+done
+
