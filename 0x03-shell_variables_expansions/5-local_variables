@@ -1,11 +1,2 @@
 #!/bin/bash
-# This script lists local variables, environment variables, and shell functions
-# Listing local variables (variables specific to the script session)
-echo "Local Variables:"
-declare -p
-# Listing environment variables
-echo "Environment Variables:"
-printenv
-# Listing shell functions
-echo "Shell Functions:"
-declare -f
+printenv; declare -p
